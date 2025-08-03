@@ -41,7 +41,7 @@ Astro requires a robust technology stack that can handle Steam API integration, 
 #### Plugin System
 - **Plugin Loading**: Dynamic assembly loading for plugin discovery
 - **Plugin Infrastructure**: IAstroPlugin interface and registration system
-- **Plugin Isolation**: Separate database contexts and service scopes per plugin
+- **Lightweight Plugins**: HTTP API endpoints that use core services without database dependencies
 
 #### Background Services
 - **Hosted Services**: .NET BackgroundService for Steam bot operations
@@ -180,3 +180,6 @@ Since this is a greenfield project, no migration is required. However, we'll des
 - **System Reliability**: Uptime and error rates in production
 - **Performance**: Meeting response time targets under load
 - **Maintainability**: Ease of adding new features and fixing bugs
+
+## Review Date
+This ADR should be reviewed after Phase 1 implementation is complete, or if significant issues arise with the chosen stack.

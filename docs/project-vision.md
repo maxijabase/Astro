@@ -248,16 +248,16 @@ Astro is a **monolithic application** with **internal plugin architecture**:
 
 ### Data Architecture
 
-#### Core Database (Shared)
+#### Core Database (Astro Only)
 - **Items**: Shared pool of all items (available, assigned, delivered)
 - **Users**: Steam user information and basic profiles
 - **Assignments**: Generic item-to-user assignments with delivery status
-- **Transactions**: Audit trail of all item movements
+- **System Events**: Audit trail of all item movements and operations
 
-#### Plugin Databases (Separate)
-- **Giveaway Plugin**: Giveaways, participants, winner history
-- **VIP Plugin**: VIP purchases, status tracking, payment history
-- **Manual Plugin**: Admin actions, assignment reasons, approval workflows
+#### External System Data (Plugin Responsibility)
+- **SourceMod Databases**: Game servers store their own giveaway, VIP, and gameplay data
+- **Plugin Storage**: Each plugin/system chooses its own data storage approach
+- **Clean Separation**: Business logic data stays with the systems that own it
 
 ### Plugin Architecture
 
